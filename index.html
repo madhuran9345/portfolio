@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madhuran K • AWS Cloud & DevOps Engineer</title>
+
+  <!-- Multi-Color Segmented DevOps Infinity Loop Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'%3E%3Cstyle%3Epath%7Bfill:none;stroke-width:18;stroke-linecap:butt;stroke-linejoin:round%7D%3C/style%3E%3Cpath d='M48,15 C30,15 15,30 15,45' stroke='%23009fe3'/%3E%3Cpath d='M15,45 C15,60 30,75 48,75' stroke='%235b3c88'/%3E%3Cpath d='M48,75 C60,75 70,62 80,45' stroke='%23e5237f'/%3E%3Cpath d='M70,58 L90,32' stroke='%23d8232a' stroke-width='19'/%3E%3Cpath d='M80,45 C90,28 100,15 112,15' stroke='%23f15a24'/%3E%3Cpath d='M112,15 C130,15 145,30 145,45' stroke='%23fbb03b'/%3E%3Cpath d='M145,45 C145,60 130,75 112,75' stroke='%238cc63f'/%3E%3Cpath d='M112,75 C100,75 90,62 80,45 C70,28 60,15 48,15' stroke='%2300a88f' stroke-dasharray='35 150' stroke-dashoffset='-60'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Devicon Vector Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 35%, #ede9fe 70%, #fdf2f8 100%);
+      
+      /* GPU-Optimized Liquid Glass */
+      --glass-surface: rgba(255, 255, 255, 0.82);
+      --glass-surface-hover: rgba(255, 255, 255, 0.95);
+      --glass-border: rgba(255, 255, 255, 0.95);
+      --glass-shadow: 0 8px 24px -4px rgba(31, 38, 135, 0.08);
+      --glass-shadow-hover: 0 16px 32px -4px rgba(31, 38, 135, 0.14);
+
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      
+      --grad-primary: linear-gradient(135deg, #0284c7 0%, #7c3aed 50%, #db2777 100%);
+      --grad-cyan-emerald: linear-gradient(135deg, #0284c7 0%, #059669 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+      position: relative;
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, video { max-width: 100%; display: block; }
+    
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+    
+    .gradient-text {
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    
+    .gradient-cyan-text {
+      background: var(--grad-cyan-emerald);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Ambient Glow with GPU Composition */
+    .ambient-glow {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.3;
+      transform: translateZ(0);
+      will-change: transform;
+      animation: pulseGlow 12s ease-in-out infinite alternate;
+    }
+    .glow-1 { top: -100px; left: -80px; background: #38bdf8; }
+    .glow-2 { bottom: -100px; right: -80px; background: #c084fc; animation-delay: -6s; }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(1) translate3d(0, 0, 0); }
+      100% { transform: scale(1.15) translate3d(30px, 20px, 0); }
+    }
+
+    /* Background Infinity Container */
+    .devops-bg-animation-wrap {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      width: 85vw;
+      max-width: 860px;
+      height: auto;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+      will-change: transform;
+    }
+    .devops-bg-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .devops-segment-stroke {
+      fill: none;
+      stroke-width: 28;
+      stroke-linecap: butt;
+      stroke-linejoin: round;
+    }
+
+    /* Serial Light Flow */
+    .serial-light-trail {
+      fill: none;
+      stroke: url(#serialLightGrad);
+      stroke-width: 18;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 85 465;
+      animation: serialLightMotion 6.5s linear infinite;
+      opacity: 0.95;
+    }
+    .serial-light-head {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 40 510;
+      animation: serialLightMotion 6.5s linear infinite;
+    }
+
+    @keyframes serialLightMotion {
+      0% { stroke-dashoffset: 550; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    /* Parallax Background Icons */
+    .parallax-bg-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .watermark-icon {
+      position: absolute;
+      font-size: 140px;
+      opacity: 0.08;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
+    .wm-aws { top: 8%; left: 4%; color: #ff9900; }
+    .wm-k8s { top: 32%; right: 4%; color: #326ce5; font-size: 160px; }
+    .wm-network { top: 55%; left: 5%; color: #0284c7; font-size: 130px; }
+    .wm-docker { top: 72%; right: 5%; color: #2496ed; font-size: 150px; }
+    .wm-linux { top: 88%; left: 8%; color: #d97706; font-size: 130px; }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .nav .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #0f172a; }
+    .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .nav a.link {
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #334155;
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+    .nav a.link:hover {
+      color: #4f46e5;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 85px 20px 65px;
+    }
+    .hero .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .badge-terminal {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      font-size: 13px;
+      font-weight: 700;
+      color: #4f46e5;
+      margin-bottom: 20px;
+    }
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+      animation: blink 2s infinite ease-in-out;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .title {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      color: #0f172a;
+      margin-bottom: 18px;
+    }
+    .subtitle {
+      font-size: 17.5px;
+      color: #334155;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 28px;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .avatar-glow {
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      background: var(--grad-primary);
+      border-radius: 50%;
+      filter: blur(35px);
+      opacity: 0.3;
+      transform: translateZ(0);
+    }
+    
+    .avatar {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 4px solid var(--glass-border);
+      box-shadow: 0 16px 36px rgba(31, 38, 135, 0.15);
+      transition: transform 0.3s ease;
+    }
+    .avatar:hover {
+      transform: scale(1.02);
+    }
+
+    /* Tech Matrix */
+    .hero-tech-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .matrix-card {
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      padding: 16px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: var(--glass-shadow);
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+    .matrix-card i { font-size: 32px; }
+    .matrix-card span {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .matrix-card:hover {
+      transform: translateY(-3px);
+      background: var(--glass-surface-hover);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: 65px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .sec-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .sec-header h2 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+    }
+    .sec-line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #818cf8, #38bdf8, transparent);
+      border-radius: 999px;
+    }
+
+    .grid { display: grid; gap: 24px; }
+    @media (min-width: 850px) { .grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+
+    /* Optimized Cards */
+    .glass-card {
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--glass-shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass-card:hover {
+      background: var(--glass-surface-hover);
+      box-shadow: var(--glass-shadow-hover);
+      transform: translateY(-3px);
+    }
+    
+    .card-watermark {
+      position: absolute;
+      right: -20px;
+      bottom: -25px;
+      font-size: 160px;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 1;
+    }
+    .card-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .muted-text {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* Skill Pills */
+    .pill-matrix {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--glass-border);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1e293b;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .skill-pill i { font-size: 16px; }
+    .skill-pill:hover {
+      background: #ffffff;
+      border-color: #818cf8;
+      transform: translateY(-2px);
+      color: #4338ca;
+    }
+
+    .aws-service-svg {
+      width: 17px;
+      height: 17px;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .jenkins-pill-icon {
+      background: #d24939;
+      color: #ffffff;
+      border-radius: 6px;
+      padding: 3px 6px;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hosting Signature Badge */
+    .hosting-signature-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--glass-border);
+      padding: 7px 18px;
+      border-radius: 999px;
+      margin: 4px 0 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #475569;
+      box-shadow: var(--glass-shadow);
+    }
+    .hosting-signature-brand {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      color: #0284c7;
+      letter-spacing: -0.5px;
+    }
+    .hosting-signature-brand span {
+      color: #059669;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 12px;
+      bottom: 12px;
+      width: 3px;
+      background: linear-gradient(180deg, #0284c7, #7c3aed, #db2777);
+      border-radius: 999px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 34px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -32px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3.5px solid #7c3aed;
+      box-shadow: 0 0 8px rgba(124, 58, 237, 0.35);
+    }
+    .impact-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+    .impact-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      font-size: 14.5px;
+      color: #334155;
+      line-height: 1.6;
+    }
+    .impact-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: #7c3aed;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Media Container */
+    .media-container {
+      margin-top: 18px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: #0f172a;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+    }
+    .media-container video, .media-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Buttons */
+    .btn-wrap { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 20px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+    }
+    .btn-cyan {
+      background: linear-gradient(135deg, #059669 0%, #0284c7 100%);
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+    }
+    .btn-outline {
+      background: var(--glass-surface);
+      color: #0f172a;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+    }
+    .btn-outline:hover {
+      background: var(--glass-surface-hover);
+      color: #4f46e5;
+    }
+    .btn-whatsapp { 
+      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+      box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+    }
+    .btn-instagram { 
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      box-shadow: 0 4px 14px rgba(220, 39, 67, 0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    footer {
+      border-top: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      padding: 38px 20px;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 800px) {
+      .hero .wrap { grid-template-columns: 1fr; text-align: center; }
+      .title { font-size: 34px; }
+      .contact-details { justify-content: center; }
+      .avatar { width: 210px; height: 210px; }
+      .btn-wrap { justify-content: center; }
+      .btn { width: 100%; }
+      .nav .wrap { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Background DevOps Loop -->
+  <div class="devops-bg-animation-wrap">
+    <svg class="devops-bg-svg" viewBox="0 0 160 90">
+      <defs>
+        <linearGradient id="serialLightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#38bdf8"/>
+          <stop offset="25%" stop-color="#818cf8"/>
+          <stop offset="50%" stop-color="#ec4899"/>
+          <stop offset="75%" stop-color="#f97316"/>
+          <stop offset="100%" stop-color="#84cc16"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Colored Base Segments -->
+      <path class="devops-segment-stroke" stroke="#009fe3" stroke-dasharray="68 476" stroke-dashoffset="0" d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+      <path class="devops-segment-stroke" stroke="#5b3c88" stroke-dasharray="68 476" stroke-dashoffset="-68" d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+      <path class="devops-segment-stroke" stroke="#e5237f" stroke-dasharray="68 476" stroke-dashoffset="-136" d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+      <path class="devops-segment-stroke" stroke="#d8232a" stroke-dasharray="68 476" stroke-dashoffset="-204" d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+      <path class="devops-segment-stroke" stroke="#f15a24" stroke-dasharray="68 476" stroke-dashoffset="-272" d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+      <path class="devops-segment-stroke" stroke="#fbb03b" stroke-dasharray="68 476" stroke-dashoffset="-340" d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+      <path class="devops-segment-stroke" stroke="#8cc63f" stroke-dasharray="68 476" stroke-dashoffset="-408" d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+      <path class="devops-segment-stroke" stroke="#00a88f" stroke-dasharray="68 476" stroke-dashoffset="-476" d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+
+      <!-- Single Continuous Serial Light -->
+      <path class="serial-light-trail" stroke="url(#serialLightGrad)"
+        d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+      
+      <path class="serial-light-head"
+        d="M48,16 C30,16 16,30 16,45 C16,60 30,74 48,74 C62,74 72,58 80,45 C88,32 98,16 112,16 C130,16 144,30 144,45 C144,60 130,74 112,74 C98,74 88,58 80,45 C72,32 62,16 48,16 Z" />
+    </svg>
+  </div>
+
+  <!-- Parallax Floating Background Logos -->
+  <div class="parallax-bg-layer">
+    <i class="devicon-amazonwebservices-plain-wordmark watermark-icon wm-aws" data-speed="0.12"></i>
+    <i class="devicon-kubernetes-plain watermark-icon wm-k8s" data-speed="-0.15"></i>
+    <i class="fa-solid fa-network-wired watermark-icon wm-network" data-speed="0.1"></i>
+    <i class="devicon-docker-plain watermark-icon wm-docker" data-speed="0.16"></i>
+    <i class="devicon-linux-plain watermark-icon wm-linux" data-speed="-0.1"></i>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="wrap">
+      <div class="brand font-heading">Madhuran <span class="gradient-text">K</span></div>
+      <div class="nav-links">
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#skills">Skills</a>
+        <a class="link" href="#experience">Experience</a>
+        <a class="link" href="#projects">Projects</a>
+        <a class="link" href="#education">Education</a>
+        <a class="link" href="#certs-gal">Gallery</a>
+        <a class="link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="badge-terminal font-mono">
+          <span class="status-dot"></span> Available for Cloud & DevOps Roles
+        </div>
+        <h1 class="title font-heading">
+          DevOps Engineer | AWS Cloud | <br>
+          <span class="gradient-text">Linux Admin & SRE</span>
+        </h1>
+        <p class="subtitle">
+          AWS Cloud and DevOps Engineer with 1 year of combined experience in Amazon Web Services (AWS) cloud engineering, Linux infrastructure support, CCNA networking, and CI/CD pipelines.
+        </p>
+        <div class="contact-details font-mono">
+          <span>📍 Bengaluru, Karnataka, India</span>
+          <span>📞 <a href="tel:+919345530593" style="color:#0284c7;">+91 9345530593</a></span>
+          <span>✉️ <a href="mailto:madhuran555333@gmail.com" style="color:#7c3aed;">madhuran555333@gmail.com</a></span>
+        </div>
+        <div class="btn-wrap">
+          <a class="btn btn-primary" href="#contact">Contact Me</a>
+          <a class="btn btn-cyan" href="#projects">Explore Projects</a>
+          <a class="btn btn-outline" href="resume.pdf" download>Download Resume</a>
+        </div>
+
+        <!-- HERO INTERACTIVE MATRIX -->
+        <div class="hero-tech-matrix font-mono">
+          <div class="matrix-card">
+            <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+            <span>AWS Cloud</span>
+          </div>
+          <div class="matrix-card">
+            <i class="fa-solid fa-network-wired" style="color:#0284c7;"></i>
+            <span>Networking</span>
+          </div>
+          <div class="matrix-card">
+            <i class="devicon-kubernetes-plain colored scroll-spin-k8s"></i>
+            <span>Kubernetes</span>
+          </div>
+          <div class="matrix-card">
+            <i class="devicon-docker-plain colored"></i>
+            <span>Docker</span>
+          </div>
+          <div class="matrix-card">
+            <i class="devicon-jenkins-line colored" style="color:#d24939;"></i>
+            <span>Jenkins</span>
+          </div>
+          <div class="matrix-card">
+            <i class="devicon-grafana-plain colored"></i>
+            <span>Grafana</span>
+          </div>
+          <div class="matrix-card">
+            <i class="devicon-mysql-original colored"></i>
+            <span>MySQL</span>
+          </div>
+          <div class="matrix-card">
+            <i class="devicon-linux-plain colored"></i>
+            <span>Linux OS</span>
+          </div>
+          <div class="matrix-card">
+            <i class="devicon-bash-plain colored"></i>
+            <span>Bash CLI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="avatar-wrapper reveal">
+        <div class="avatar-glow"></div>
+        <img class="avatar" src="img.jpg" alt="Madhuran K portrait">
+      </div>
+    </div>
+  </header>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section id="about" class="reveal">
+    <div class="sec-header">
+      <h2 class="font-heading">Professional <span class="gradient-text">Summary</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="glass-card">
+      <i class="devicon-amazonwebservices-plain-wordmark card-watermark" style="color:#ff9900;"></i>
+      <div class="card-content">
+        <p class="muted-text">
+          AWS Cloud and DevOps Engineer with 1 year of combined experience in Amazon Web Services (AWS) cloud engineering and Linux infrastructure support. Completed a 6-month AWS Cloud Engineer internship creating and validating cloud infrastructure for production-like environments and supporting production AWS infrastructure with senior engineers.
+        </p>
+        <p class="muted-text" style="margin-top: 14px;">
+          Currently working as a Technical Support Engineer administering Linux servers and collaborating with clients to connect hosting servers with AWS, database, and application servers for production applications. Hands-on with EC2, VPC, IAM, ALB, Auto Scaling, RDS, CI/CD (Jenkins), Docker, Kubernetes, Apache, Nginx, DNS, and SSL/TLS. Seeking DevOps Engineer, AWS Cloud Engineer, Linux Administrator, or Site Reliability Engineer (SRE) roles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section id="skills" class="reveal">
+    <div class="sec-header">
+      <h2 class="font-heading">Technical <span class="gradient-cyan-text">Skills</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    
+    <div class="grid cols-2">
+
+      <!-- Networking and Security -->
+      <div class="glass-card">
+        <i class="fa-solid fa-network-wired card-watermark" style="color: #0284c7;"></i>
+        <div class="card-content">
+          <h3 class="card-title">Networking and Security</h3>
+          <p class="muted-text">Network protocols, traffic routing, security firewalls, and hybrid connectivity.</p>
+          <div class="pill-matrix">
+            <span class="skill-pill"><i class="fa-solid fa-globe" style="color:#0284c7;"></i> DNS</span>
+            <span class="skill-pill"><i class="fa-solid fa-network-wired" style="color:#0284c7;"></i> TCP/IP</span>
+            <span class="skill-pill"><i class="fa-solid fa-sitemap" style="color:#0284c7;"></i> Subnetting & VLSM</span>
+            <span class="skill-pill"><i class="fa-solid fa-shield-halved" style="color:#7c3aed;"></i> Access Control Lists (ACL)</span>
+            <span class="skill-pill"><i class="fa-solid fa-route" style="color:#0284c7;"></i> NAT & Routing</span>
+            <span class="skill-pill"><i class="fa-solid fa-fire" style="color:#ea580c;"></i> Firewall</span>
+            <span class="skill-pill"><i class="fa-solid fa-lock" style="color:#16a34a;"></i> SSL / TLS</span>
+            <span class="skill-pill"><i class="fa-solid fa-bolt" style="color:#eab308;"></i> CDN</span>
+            <span class="skill-pill"><i class="fa-solid fa-scale-balanced" style="color:#0284c7;"></i> Load Balancing</span>
+            <span class="skill-pill"><i class="fa-solid fa-user-shield" style="color:#7c3aed;"></i> IAM Policies</span>
+            <span class="skill-pill"><i class="fa-solid fa-shield" style="color:#ea580c;"></i> Security Groups</span>
+            <span class="skill-pill"><i class="fa-solid fa-link" style="color:#0284c7;"></i> Hybrid Connectivity (Hosting ⇄ AWS)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cloud: Amazon Web Services (AWS) -->
+      <div class="glass-card">
+        <i class="devicon-amazonwebservices-plain-wordmark card-watermark" style="color: #ff9900;"></i>
+        <div class="card-content">
+          <h3 class="card-title">Cloud: Amazon Web Services (AWS)</h3>
+          <p class="muted-text">Scalable multi-AZ cloud architecture, security, and edge acceleration.</p>
+          <div class="pill-matrix">
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#ea580c" stroke-width="2"/><circle cx="8" cy="8" r="1.5" fill="#ea580c"/><circle cx="16" cy="8" r="1.5" fill="#ea580c"/><path d="M7 16h10" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/></svg>
+              EC2
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3v12c0 1.7-3.6 3-8 3s-8-1.3-8-3V6z" stroke="#059669" stroke-width="2"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3M4 6c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="#059669" stroke-width="2"/></svg>
+              S3
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6.5C4 16.5 7.4 21 12 22c4.6-1 8-5.5 8-10.5V5l-8-3z" stroke="#dc2626" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#dc2626" stroke-width="1.5"/><path d="M8.5 16c0-1.9 1.6-3.5 3.5-3.5s3.5 1.6 3.5 3.5" stroke="#dc2626" stroke-width="1.5"/></svg>
+              IAM
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><path d="M19 18H6a4 4 0 0 1 0-8 6 6 0 0 1 11.5-2A4 4 0 0 1 19 18z" stroke="#7c3aed" stroke-width="2"/><path d="M8 14h8M12 11v6" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round"/></svg>
+              VPC
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="3" stroke="#7c3aed" stroke-width="2"/><circle cx="18" cy="6" r="3" stroke="#7c3aed" stroke-width="2"/><circle cx="18" cy="18" r="3" stroke="#7c3aed" stroke-width="2"/><path d="M9 12h3m0 0l3-5m-3 5l3 5" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/></svg>
+              ELB & ALB
+            </span>
+            <span class="skill-pill">
+              <i class="devicon-kubernetes-plain" style="color:#326ce5;"></i>
+              EKS (Kubernetes)
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#7c3aed" stroke-width="2"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="#7c3aed" stroke-width="1.5"/><path d="M9 10h6l-4 4h4" stroke="#ea580c" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Route 53
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="10" height="10" rx="2" stroke="#ea580c" stroke-width="2"/><rect x="11" y="11" width="10" height="10" rx="2" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="2 2"/><path d="M6 3l3 3M21 18l-3-3" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/></svg>
+              Auto Scaling
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#dc2626" stroke-width="2"/><path d="M7 14l3-4 3 3 4-5" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              CloudWatch
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="#2563eb" stroke-width="2"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" stroke="#2563eb" stroke-width="2"/></svg>
+              RDS
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><path d="M12 3L4 6.5v5c0 5 3.5 9 8 10 4.5-1 8-5 8-10v-5L12 3z" stroke="#dc2626" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Security Groups
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#7c3aed" stroke-width="2"/><path d="M13 3l-4 8h6l-4 10" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              CloudFront
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="3" stroke="#7c3aed" stroke-width="2"/><path d="M7 12h10M13 8l4 4-4 4" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              NAT Gateway
+            </span>
+            <span class="skill-pill">
+              <svg class="aws-service-svg" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#7c3aed" stroke-width="2"/><path d="M9 9h6v6H9zM9 4v2M15 4v2M9 18v2M15 18v2" stroke="#7c3aed" stroke-width="2"/></svg>
+              Bastion Host
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linux Administration -->
+      <div class="glass-card">
+        <i class="devicon-linux-plain card-watermark" style="color: #d97706;"></i>
+        <div class="card-content">
+          <h3 class="card-title">Linux Administration</h3>
+          <p class="muted-text">Enterprise OS management, process diagnostics, file permissions, and CLI triage.</p>
+          <div class="pill-matrix">
+            <span class="skill-pill"><i class="devicon-ubuntu-plain colored"></i> Ubuntu</span>
+            <span class="skill-pill"><i class="devicon-centos-plain-wordmark colored"></i> CentOS</span>
+            <span class="skill-pill"><i class="devicon-amazonwebservices-plain-wordmark colored"></i> Amazon Linux</span>
+            <span class="skill-pill"><i class="fa-solid fa-users-gear" style="color:#0284c7;"></i> User & Group Management</span>
+            <span class="skill-pill"><i class="fa-solid fa-key" style="color:#d97706;"></i> File Permissions</span>
+            <span class="skill-pill"><i class="fa-solid fa-hard-drive" style="color:#059669;"></i> Filesystem Management</span>
+            <span class="skill-pill"><i class="fa-solid fa-box-open" style="color:#dc2626;"></i> Package Management (yum, apt)</span>
+            <span class="skill-pill"><i class="fa-solid fa-gears" style="color:#7c3aed;"></i> Systemd</span>
+            <span class="skill-pill"><i class="fa-solid fa-chart-line" style="color:#0284c7;"></i> Process Monitoring (top, ps, htop)</span>
+            <span class="skill-pill"><i class="fa-solid fa-clock" style="color:#d97706;"></i> Cron Jobs</span>
+            <span class="skill-pill"><i class="fa-solid fa-file-lines" style="color:#059669;"></i> Log Analysis</span>
+            <span class="skill-pill"><i class="devicon-ssh-original colored"></i> SSH</span>
+            <span class="skill-pill"><i class="devicon-bash-plain colored"></i> Bash Scripting</span>
+            <span class="skill-pill"><i class="fa-solid fa-screwdriver-wrench" style="color:#dc2626;"></i> Server Troubleshooting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DevOps and SRE -->
+      <div class="glass-card">
+        <i class="devicon-kubernetes-plain card-watermark" style="color: #326ce5;"></i>
+        <div class="card-content">
+          <h3 class="card-title">DevOps and SRE</h3>
+          <p class="muted-text">Continuous integration, continuous deployment, containerization, and observability.</p>
+          <div class="pill-matrix">
+            <span class="skill-pill"><i class="fa-solid fa-arrows-rotate" style="color:#0284c7;"></i> Continuous Integration (CI)</span>
+            <span class="skill-pill"><i class="fa-solid fa-rocket" style="color:#db2777;"></i> Continuous Deployment (CD)</span>
+            <span class="skill-pill"><span class="jenkins-pill-icon"><i class="devicon-jenkins-plain" style="color:#fff;"></i></span> Jenkins</span>
+            <span class="skill-pill"><span class="jenkins-pill-icon" style="background:#b03525;"><i class="fa-solid fa-file-code" style="color:#fff;"></i></span> Jenkinsfile</span>
+            <span class="skill-pill"><i class="fa-solid fa-code" style="color:#7c3aed;"></i> Pipeline as Code</span>
+            <span class="skill-pill"><i class="devicon-git-plain colored"></i> Git</span>
+            <span class="skill-pill"><i class="devicon-github-original" style="color:#0f172a;"></i> GitHub</span>
+            <span class="skill-pill"><i class="fa-solid fa-anchor" style="color:#0284c7;"></i> GitHub Webhooks</span>
+            <span class="skill-pill"><i class="devicon-docker-plain colored"></i> Docker</span>
+            <span class="skill-pill"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
+            <span class="skill-pill"><i class="devicon-prometheus-original colored"></i> Prometheus</span>
+            <span class="skill-pill"><i class="devicon-grafana-plain colored"></i> Grafana</span>
+            <span class="skill-pill"><i class="fa-solid fa-magnifying-glass-chart" style="color:#059669;"></i> Monitoring & Observability</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database, Web & Application Servers -->
+      <div class="glass-card">
+        <i class="devicon-mysql-original card-watermark" style="color: #00758f;"></i>
+        <div class="card-content">
+          <h3 class="card-title">Database, Web & Application Servers</h3>
+          <p class="muted-text">Web application serving, database installation, user management, and backups.</p>
+          <div class="pill-matrix">
+            <span class="skill-pill"><i class="devicon-mysql-original colored"></i> MySQL</span>
+            <span class="skill-pill"><i class="devicon-azuresqldatabase-plain colored"></i> MsSQL</span>
+            <span class="skill-pill"><i class="devicon-amazonwebservices-plain-wordmark colored"></i> Amazon RDS</span>
+            <span class="skill-pill"><i class="devicon-apache-plain colored"></i> Apache HTTP Server (HTTPD)</span>
+            <span class="skill-pill"><i class="devicon-nginx-original colored"></i> Nginx</span>
+            <span class="skill-pill"><i class="devicon-tomcat-line colored"></i> Apache Tomcat</span>
+            <span class="skill-pill"><i class="fa-solid fa-server" style="color:#0284c7;"></i> Virtual Hosts</span>
+            <span class="skill-pill"><i class="fa-solid fa-database" style="color:#d97706;"></i> DB Install & Config</span>
+            <span class="skill-pill"><i class="fa-solid fa-users" style="color:#059669;"></i> User Management</span>
+            <span class="skill-pill"><i class="fa-solid fa-floppy-disk" style="color:#db2777;"></i> Backup and Restore</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hosting, Email, Automation & Tools -->
+      <div class="glass-card">
+        <i class="fa-solid fa-envelope-open-text card-watermark" style="color: #7c3aed;"></i>
+        <div class="card-content">
+          <h3 class="card-title">Hosting, Email, Automation & Tools</h3>
+          <p class="muted-text">Hosting control panel management, mail deliverability, scripting, and remote tools.</p>
+          <div class="pill-matrix">
+            <span class="skill-pill"><i class="fa-solid fa-sliders" style="color:#ea580c;"></i> cPanel & WHM</span>
+            <span class="skill-pill"><i class="fa-solid fa-table-columns" style="color:#0284c7;"></i> Plesk & OviPanel</span>
+            <span class="skill-pill"><i class="fa-solid fa-folder-tree" style="color:#d97706;"></i> FTP / SFTP</span>
+            <span class="skill-pill"><i class="fa-solid fa-envelope" style="color:#059669;"></i> Dovecot</span>
+            <span class="skill-pill"><i class="fa-solid fa-paper-plane" style="color:#db2777;"></i> SMTP, IMAP, POP3</span>
+            <span class="skill-pill"><i class="fa-solid fa-envelope-circle-check" style="color:#0284c7;"></i> MX, SPF, DKIM, DMARC</span>
+            <span class="skill-pill"><i class="devicon-bash-plain colored"></i> Bash & Shell Scripting</span>
+            <span class="skill-pill"><i class="devicon-python-plain colored"></i> Python & Boto3</span>
+            <span class="skill-pill"><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS CLI</span>
+            <span class="skill-pill"><i class="fa-solid fa-file-code" style="color:#db2777;"></i> YAML</span>
+            <span class="skill-pill"><i class="devicon-putty-plain colored"></i> PuTTY</span>
+            <span class="skill-pill"><i class="fa-solid fa-terminal" style="color:#d97706;"></i> MobaXterm</span>
+            <span class="skill-pill"><i class="devicon-filezilla-plain colored"></i> WinSCP & FileZilla</span>
+            <span class="skill-pill"><i class="fa-brands fa-wordpress" style="color:#21759b;"></i> WordPress Hosting & Migration</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section id="experience" class="reveal">
+    <div class="sec-header">
+      <h2 class="font-heading">Professional <span class="gradient-text">Experience</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="glass-card timeline">
+      <!-- Role 1 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3 class="card-title">Technical Support Engineer — <span class="gradient-cyan-text">OVI Hosting</span></h3>
+        
+        <div>
+          <div class="hosting-signature-badge">
+            <span>Part of</span>
+            <span class="hosting-signature-brand">hosting<span>.com</span></span>
+          </div>
+        </div>
+
+        <p class="muted-text font-mono" style="font-size:13.5px; font-weight: 700; color:#0284c7; margin-bottom: 10px;">March 2026 – Present | Bengaluru, Karnataka</p>
+        <ul class="impact-list">
+          <li>Administer Linux servers (Ubuntu, CentOS) including user and group management, file permissions, process monitoring, package management (yum, apt), and service troubleshooting to maintain hosting availability.</li>
+          <li>Collaborate with clients to connect OVI hosting servers with Amazon Web Services (AWS) servers, database servers, and application servers for production application connectivity, including DNS, firewall, and access configuration.</li>
+          <li>Diagnose and resolve production incidents involving Apache HTTP Server, Nginx, virtual host configuration, SSL/TLS certificates, DNS records, and website accessibility.</li>
+          <li>Create, modify, and troubleshoot cron jobs and Bash scripts to automate backups, maintenance, monitoring, and scheduled operational tasks.</li>
+          <li>Monitor Linux system logs and Windows Event Viewer to identify infrastructure issues, restore services, and support incident response.</li>
+          <li>Configure and support domain management, DNS records (A, CNAME, MX, TXT), SSL certificate installation and renewal, IP allowlisting and blocklisting, and FTP/SFTP access.</li>
+          <li>Perform remote Linux and Windows administration using SSH (MobaXterm, PuTTY), RDP, and secure file transfer (WinSCP, FileZilla); manage hosting control panels including cPanel, WHM, Plesk, and OviPanel.</li>
+          <li>Troubleshoot email delivery (SMTP, IMAP, POP3, MX, SPF, DKIM, DMARC) and WordPress installation, migration, performance, plugin, and hosting issues on Linux web servers.</li>
+        </ul>
+      </div>
+
+      <!-- Role 2 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3 class="card-title">AWS Cloud Engineer Intern — <span class="gradient-cyan-text">Besant Technologies</span></h3>
+        <p class="muted-text font-mono" style="font-size:13.5px; font-weight: 700; color:#0284c7; margin-bottom: 10px;">August 2025 – January 2026 | Bengaluru, Karnataka</p>
+        <ul class="impact-list">
+          <li>Worked as an AWS Cloud Engineer intern for 6 months, creating and validating cloud infrastructure at testing level for production-like environments before senior review.</li>
+          <li>Supported production AWS infrastructure with senior engineers, including Amazon EC2, VPC, IAM, Security Groups, Load Balancers, Auto Scaling, and RDS configuration and troubleshooting.</li>
+          <li>Built and submitted an AWS 3-tier web architecture (web, application, and database tiers) using VPC public/private subnets, ALB, Auto Scaling, Bastion Host, NAT Gateway, and Amazon RDS Multi-AZ.</li>
+          <li>Implemented a testing-level CI/CD and Infrastructure as Code (IaC) project using Terraform, Jenkins, and Ansible to provision AWS resources and deploy a Java web application; submitted to seniors for review.</li>
+          <li>Gained hands-on knowledge of AWS networking, IAM least-privilege access, Linux-based application servers, and end-to-end cloud infrastructure workflows.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+    <div class="sec-header">
+      <h2 class="font-heading">Technical <span class="gradient-text">Projects</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    
+    <div class="grid cols-2">
+      <!-- Project 1 -->
+      <div class="glass-card">
+        <i class="devicon-kubernetes-plain card-watermark" style="color: #326ce5;"></i>
+        <div class="card-content">
+          <h3 class="card-title">Automated Cloud-Native CI/CD Pipeline</h3>
+          <p class="muted-text font-mono" style="font-size:12.5px; font-weight:700; color:#0284c7; margin-bottom:8px;">Scalable Web Applications</p>
+          <ul class="impact-list">
+            <li>Implemented event-driven CI/CD using GitHub Webhooks to trigger Jenkins pipelines on every code commit.</li>
+            <li>Developed Jenkins Pipeline as Code (Jenkinsfile) to automate build, test, and deployment workflows; built Docker images and pushed versioned images to Docker Hub.</li>
+            <li>Deployed containerized applications on Kubernetes with rolling updates and self-healing.</li>
+            <li>Provisioned AWS EC2, IAM, VPC, and Security Groups; integrated Prometheus and Grafana for monitoring.</li>
+          </ul>
+          <div class="media-container">
+            <video controls muted preload="metadata" playsinline poster="cicd.jpg">
+              <source src="devopsproject.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="font-mono" style="font-size:12px; font-weight:600; color:#475569; margin-top:8px;">▶ CI/CD Pipeline Demo – Jenkins, Docker, K8s</p>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="glass-card">
+        <i class="devicon-terraform-plain card-watermark" style="color: #7b42bc;"></i>
+        <div class="card-content">
+          <h3 class="card-title">Scalable Web App Deployment on AWS</h3>
+          <p class="muted-text font-mono" style="font-size:12.5px; font-weight:700; color:#0284c7; margin-bottom:8px;">Terraform, Jenkins & Ansible (IaC)</p>
+          <ul class="impact-list">
+            <li>Designed an end-to-end CI/CD and Infrastructure as Code (IaC) workflow to provision AWS resources and deploy a Java web application.</li>
+            <li>Used Terraform to provision VPC, subnets, EC2 instances, Load Balancer, and Security Groups.</li>
+            <li>Used Jenkins to build a WAR artifact and Ansible playbooks to configure servers and deploy the application.</li>
+            <li>Submitted project to senior engineers for production review.</li>
+          </ul>
+          <div class="media-container">
+            <video controls muted preload="metadata" playsinline poster="terraform.jpg">
+              <source src="devopsproject2.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="font-mono" style="font-size:12px; font-weight:600; color:#475569; margin-top:8px;">▶ CI/CD + Terraform + Ansible Deployment Demo</p>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="glass-card" style="grid-column: 1 / -1;">
+        <i class="devicon-amazonwebservices-plain-wordmark card-watermark" style="color: #ff9900;"></i>
+        <div class="card-content">
+          <h3 class="card-title">AWS 3-Tier Web App Architecture</h3>
+          <p class="muted-text font-mono" style="font-size:12.5px; font-weight:700; color:#0284c7; margin-bottom:8px;">Multi-AZ Cloud Infrastructure</p>
+          <ul class="impact-list">
+            <li>Designed a scalable 3-tier architecture on AWS with web, application, and database tiers using VPC public and private subnets across multiple AZs.</li>
+            <li>Implemented Auto Scaling Groups, Application Load Balancer (ALB), Bastion Host, and NAT Gateway.</li>
+            <li>Integrated Amazon RDS Multi-AZ for database replication and fault tolerance; submitted architecture for senior review.</li>
+          </ul>
+          <div class="media-container">
+            <img src="aws.jpg" alt="AWS 3-Tier Web Application Architecture" />
+          </div>
+          <p class="font-mono" style="font-size:12px; font-weight:600; color:#475569; margin-top:8px;">▶ AWS 3-Tier Architecture Blueprint</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <section id="education" class="reveal">
+    <div class="sec-header">
+      <h2 class="font-heading">Education & <span class="gradient-cyan-text">Certifications</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid cols-2">
+      <div class="glass-card">
+        <div class="card-content">
+          <h3 class="card-title">Academic Background</h3>
+          <ul class="impact-list">
+            <li>
+              <strong>B.Sc. Computer Science (2022–2025)</strong><br>
+              Manonmaniam Sundaranar University • Grade: 80%
+            </li>
+            <li style="margin-top: 14px;">
+              <strong>Diploma in Mechanical Engineering (2018–2020)</strong><br>
+              Chandy Polytechnic College • Grade: 76%
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="card-content">
+          <h3 class="card-title">Certifications & Training</h3>
+          <ul class="impact-list">
+            <li><strong>AWS Cloud, Linux Administration, CCNA Networking, DevOps, Python</strong> — Besant Technologies</li>
+            <li><strong>Soft Skills and Communication</strong> — Unxt Udhyogam (Infosys-sponsored)</li>
+            <li><strong>Oracle Cloud Infrastructure</strong> — Oracle Online Certification (2024, 2025 AI)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATE GALLERY -->
+  <section id="certs-gal" class="reveal">
+    <div class="sec-header">
+      <h2 class="font-heading">Certificate <span class="gradient-text">Gallery</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid cols-2">
+      <div class="glass-card">
+        <div class="media-container">
+          <img src="cloud_computing.jpg" alt="AWS Cloud, CCNA, Linux, Python Certificate" />
+        </div>
+        <p class="font-mono" style="margin-top:12px; font-size: 13.5px; font-weight:700; color:#334155;">AWS Cloud, DevOps, Terraform, CCNA, Linux, Python — Besant Technologies (2025)</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="media-container">
+          <img src="unnati.jpg" alt="Unxt Udhyogam - Soft Skills Program" />
+        </div>
+        <p class="font-mono" style="margin-top:12px; font-size: 13.5px; font-weight:700; color:#334155;">Unxt Udhyogam – Soft Skills Program (Infosys-sponsored)</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="media-container">
+          <img src="oracle24.jpg" alt="Oracle Cloud Certificate 2024" />
+        </div>
+        <p class="font-mono" style="margin-top:12px; font-size: 13.5px; font-weight:700; color:#334155;">Oracle Cloud Infrastructure — 2024</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="media-container">
+          <img src="oracle25ai.jpg" alt="Oracle Cloud Certificate 2025" />
+        </div>
+        <p class="font-mono" style="margin-top:12px; font-size: 13.5px; font-weight:700; color:#334155;">Oracle Cloud Infrastructure AI — 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="glass-card" style="text-align: center; padding: 46px 20px;">
+      <h2 class="font-heading" style="font-size: 34px; margin-bottom: 12px; color:#0f172a;">Let's Connect & <span class="gradient-text">Collaborate</span></h2>
+      <p class="muted-text" style="max-width: 600px; margin: 0 auto 24px;">
+        Seeking DevOps Engineer, AWS Cloud Engineer, Linux Administrator, or Site Reliability Engineer (SRE) roles.
+      </p>
+      <div class="btn-wrap" style="justify-content: center;">
+        <a class="btn btn-primary" href="mailto:madhuran555333@gmail.com">✉ Email Me</a>
+        <a class="btn btn-cyan" href="https://www.linkedin.com/in/madhurank" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/919345530593" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-instagram" href="https://www.instagram.com/_madhuran_kannan_/?hl=en" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="font-mono">© 2026 Madhuran K • DevOps | AWS Cloud | Linux Admin | SRE</div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // 1. Reveal Animations with standard IntersectionObserver
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -20px 0px"
+    });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // 2. Ultra-Smooth 60fps RequestAnimationFrame Scroll Loop
+    const watermarkIcons = document.querySelectorAll('.watermark-icon');
+    const k8sHeroIcon = document.querySelector('.scroll-spin-k8s');
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.pageYOffset;
+
+          if (k8sHeroIcon) {
+            k8sHeroIcon.style.transform = `rotate(${scrollY * 0.35}deg) scale(1.15)`;
+          }
+
+          watermarkIcons.forEach(icon => {
+            const speed = parseFloat(icon.getAttribute('data-speed') || 0.1);
+            const yOffset = scrollY * speed;
+            icon.style.transform = `translate3d(0, ${yOffset}px, 0)`;
+          });
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // 3. Smooth Navigation Offset
+    document.querySelectorAll('.nav a.link').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          const offset = 80;
+          window.scrollTo({
+            top: targetSection.offsetTop - offset,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
